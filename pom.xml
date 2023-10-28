@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>unir.Ad1</groupId>
-	<artifactId>AD-1_Entorno_Servidor</artifactId>
+	<artifactId>GerardPerujo_Eventos_Activ1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AD-1_Entorno_Servidor</name>
 	<description>Demo project for Spring Boot</description>

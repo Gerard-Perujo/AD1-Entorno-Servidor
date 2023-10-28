@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>alta</title>
+</head>
+<body>
+	<div style="width:50%; margin:0 auto">
+		<form th:action="@{/eventos/alta}" method="post">
+			<h3>Crear nuevo Cliente:</h3><hr/>
+			Duracion del Evento en dias: <input type="number" name="duracion"><hr/>
+			Aforo maximo del Recinto: <input type="number" name="aforoMax"><hr/>
+			Cantidad de asistentes: <input type="number" name="maxAsistencia"><hr/>
+			Nombre del Evento: <input type="text" name="nombre"><hr/>
+			Descripcion del Evento: <input type="text" name="descripcion"><hr/>
+			Direccion del Evento: <input type="text" name="direccion"><hr/>
+			Estado del Evento: <select name="estado"> 
+				<option value="Activo">Activo
+				<option value="Cancelado">Cancelado
+			</select><hr/>
+			Evento Destacado?<select name="destacado">
+				<option value="S">S
+				<option value="N">N
+			</select><hr/>
+			Fecha del Evento: <input type="date" name="fechaInicio"><hr/>
+			Precio del Evento: <input type="number" name="precio"><hr/>
+			Tipo de Evento: <select name="tipo.nombre">
+				<option value="Boda">Boda
+				<option value="Cumpleaños">Cumpleaños
+				<option value="Despedida">Despedida
+				<option value="Concierto">Concierto
+			</select><hr/>
+				<input type="submit" value="Agregar Evento"><hr/>
+				<p th:text="${mensaje}"></p>
+		
+		</form>
+	</div>
+	<div style="text-align:center">
+		<a th:href="@{/}">
+			<input type="button" value="Volver a Eventos">
+		</a>
+	</div>
+</body>
+</html>

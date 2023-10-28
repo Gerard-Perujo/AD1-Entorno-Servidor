@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/eventos/cancelados}" method="get">
+	<h3>Listado de Eventos Cancelados</h3>
+	<table border="2" width= 50% margin= 0 auto borderstyle= solid>
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Precio</th>
+			<th>Tipo</th>
+			<th>Estado</th>
+			<th >Descripcion</th>
+			<th>Opciones</th>
+		</tr>
+		<tr th:each="evento : ${eventos}">
+			<td th:text= "${evento.idEvento}"></td>
+			<td th:text="${evento.nombre}"></td>
+			<td th:text="${evento.precio}"></td>
+			<td th:text= "${evento.tipo.nombre}"></td>
+			<td th:text="${evento.estado}"></td>
+			<td th:text="${evento.descripcion}"></td>
+			<td> <a th:href="@{/eventos/detalle/{id}(id=${evento.idEvento})}">Detalles</a></td>
+			
+		</tr>
+	</table>
+	</form>
+	
+	<br/>
+	<a th:href="@{/}">
+		<input type="button" value="Volver a Eventos">
+	</a>
+</body>
+</html>

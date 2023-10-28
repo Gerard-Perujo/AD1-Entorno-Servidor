@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalles</title>
+</head>
+<body>
+	<form th:object="${evento}" style="width:50%; margin: 0 auto">
+		<h3>Detalle del Cliente:</h3><hr/>
+		Id Evento: <label th:text="*{idEvento}"></label><hr/>
+		Duracion: <label th:text="*{duracion}"></label> dias<hr/>
+		Aforo maximo: <label th:text="*{aforoMax}"></label> personas<hr/>
+		Asistencia al Evento: <label th:text="*{maxAsistencia}"></label> personas<hr/>
+		Nombre Evento: <label th:text="*{nombre}"></label><hr/>
+		Descripcion Evento: <label th:text="*{descripcion}"></label><hr/>
+		Direccion Evento: <label th:text="*{direccion}"></label><hr/>
+		Estado del Evento: <label th:text="*{estado}"></label><hr/>
+		Destacado: <label th:text="*{destacado}"></label><hr/>
+		Fecha del Evento: <label th:text="*{#dates.format(fechaInicio, 'dd-MM-yyyy')}"></label><hr/>
+		Precio del Evento: <label th:text="*{precio}"></label><hr/>
+		Tipo de Evento: <label th:text="*{tipo.nombre}"</label>
+		
+	</form>
+	<hr/>
+	<br/>
+	<div style="text-align:center">
+	<a th:href="@{/}">
+		<input type="button" value="Volver a Eventos">
+	</div>
+</body>
+</html>

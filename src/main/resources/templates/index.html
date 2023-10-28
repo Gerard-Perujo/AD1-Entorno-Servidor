@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+</head>
+<body>
+	<h1>Actividad 1: Entorno Servidor</h1>
+	<h3>Mensaje: <span th:text="${mensaje}"></span></h3>
+	<a th:href="@{/eventos/alta}">
+		<input type="button" value="Crear Nuevo Evento">
+	</a>
+	<h3>Listado de Eventos Activos</h3>
+	<table border="2" width= 50% margin= 0 auto borderstyle= solid>
+		<tr>
+			<!--<th>Id</th>-->
+			<th>Nombre</th>
+			<th>Precio</th>
+			<th>Tipo</th>
+			<th>Estado</th>
+			<th colspan=4>Opciones</th>
+		</tr>
+		<tr th:each="evento : ${eventos}">
+			<!--<td th:text= "${evento.idEvento}"></td>-->
+			<td th:text="${evento.nombre}"></td>
+			<td th:text="${evento.precio}"></td>
+			<td th:text= "${evento.tipo.nombre}"></td>
+			<td th:text="${evento.estado}"></td>
+			<td><a th:href="@{/eventos/detalle/{id}(id=${evento.idEvento})}">Detalles</a></td>
+			<td><a th:href="@{/eventos/editar/{id}(id=${evento.idEvento})}">Editar</a></td>
+			<td><a th:href="@{/eventos/eliminar/{id}(id=${evento.idEvento})}">Eliminar</a></td>
+			<td><a th:href="@{/eventos/cancelar/{id}(id=${evento.idEvento})}">Cancelar</a></td>
+		</tr>
+	</table>
+	<br/>
+	<a th:href="@{/eventos/cancelados}">
+		<input type="button" value="Lista de Eventos Cancelados">
+	</a>
+</body>
+</html>

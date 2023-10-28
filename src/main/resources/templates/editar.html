@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editar</title>
+</head>
+<body>
+	<div style="width:50%; margin:0 auto">
+		<form th:action="@{/eventos/editar/{id}(id=${evento.idEvento})}" th:object="${evento}" method="post">
+			<label style="font-weight:bold">Modificar el Evento Id:</label><label style="font-weight:bold" th:text="*{idEvento}"></label><hr/>
+			Duracion del Evento en dias: <input type="number" th:field="*{duracion}"><hr/>
+			Aforo maximo del Evento: <input type="number" th:field="*{aforoMax}"><hr/>
+			Numero de Asistentes al Evento: <input type="number" th:field="*{maxAsistencia}"><hr/>
+			Nombre del Evento: <input type="text" th:field="*{nombre}"><hr/>
+			Descripcion del Evento: <input type="text" th:field="*{descripcion}"><hr/>
+			Direccion del Evento: <input type="text" th:field="*{direccion}"><hr/>
+			Estado del Evento: <input type="text" th:field="*{estado}"><hr/>
+			Esta Destacado? : <input type="text" th:field="*{destacado}"><hr/>
+			Fecha del Evento: <input type="date" th:field="*{fechaInicio}"><hr/>
+			Precio del Evento: <input type="text" th:field="*{precio}"><hr/>
+			Tipo de Evento: <input type="text" th:field="*{tipo.nombre}"><hr/>
+			
+			<div style="text-align:center">
+				<input type="submit" value="Modificar">	
+			</div>
+			<hr/>
+			<a th:href="@{/}">
+				<input type="button" value="Volver a Eventos">
+			</a>
+			
+		</form>
+	</div>
+</body>
+</html>
